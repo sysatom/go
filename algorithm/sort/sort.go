@@ -13,3 +13,13 @@ func SelectionSort(items []int) []int {
 	}
 	return items
 }
+
+func InsertionSort(items []int) []int {
+	length := len(items)
+	for i := 1; i < length; i++ {
+		for j := i; j > 0 && items[j] < items[j-1]; j-- {
+			items[j], items[j-1] = items[j-1], items[j]
+		}
+	}
+	return items
+}
