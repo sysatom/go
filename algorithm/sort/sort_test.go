@@ -43,3 +43,16 @@ func BenchmarkBubbleSort(b *testing.B) {
 		BubbleSort(a)
 	}
 }
+
+func TestCocktailSort(t *testing.T) {
+	a := []int{4, 8, 2, 5, 6, 7, 1, 0, 3, 9}
+	r := CocktailSort(a)
+	fmt.Println(r)
+}
+
+func BenchmarkCocktailSort(b *testing.B) {
+	a := []int{4, 8, 2, 5, 6, 7, 1, 0, 3, 9}
+	for i := 0; i < b.N; i++ {
+		CocktailSort(a)
+	}
+}
