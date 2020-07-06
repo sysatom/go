@@ -60,3 +60,31 @@ func CocktailSort(items []int) []int {
 	}
 	return items
 }
+
+func QuickSort(items []int) []int {
+	quickSort(items, 0, len(items)-1)
+	return items
+}
+
+func quickSort(nums []int, low, high int) {
+	if low < high {
+		pivot := partition(nums, low, high)
+		quickSort(nums, low, pivot-1)
+		quickSort(nums, pivot+1, high)
+	}
+}
+
+func partition(nums []int, low, high int) int {
+	pivot := nums[low]
+	for low < high {
+		for low < high && nums[high] >= pivot {
+			high--
+		}
+		nums[low], nums[high] = nums[high], nums[low]
+		for low < high && nums[low] <= pivot {
+			low++
+		}
+		nums[low], nums[high] = nums[high], nums[low]
+	}
+	return low
+}

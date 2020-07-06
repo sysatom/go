@@ -2,6 +2,7 @@ package sort
 
 import (
 	"fmt"
+	"sort"
 	"testing"
 )
 
@@ -54,5 +55,25 @@ func BenchmarkCocktailSort(b *testing.B) {
 	a := []int{4, 8, 2, 5, 6, 7, 1, 0, 3, 9}
 	for i := 0; i < b.N; i++ {
 		CocktailSort(a)
+	}
+}
+
+func TestQuickSort(t *testing.T) {
+	a := []int{4, 8, 2, 5, 6, 7, 1, 0, 3, 9}
+	r := QuickSort(a)
+	fmt.Println(r)
+}
+
+func BenchmarkQuickSort(b *testing.B) {
+	a := []int{4, 8, 2, 5, 6, 7, 1, 0, 3, 9}
+	for i := 0; i < b.N; i++ {
+		QuickSort(a)
+	}
+}
+
+func BenchmarkQuickSort2(b *testing.B) {
+	a := []int{4, 8, 2, 5, 6, 7, 1, 0, 3, 9}
+	for i := 0; i < b.N; i++ {
+		sort.Ints(a)
 	}
 }
