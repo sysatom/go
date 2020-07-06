@@ -23,3 +23,15 @@ func InsertionSort(items []int) []int {
 	}
 	return items
 }
+
+func BubbleSort(items []int) []int {
+	length := len(items)
+	for i := 0; i < length; i++ {
+		for j := i+1; j < length; j++ {
+			if items[i] > items[j] {
+				items[j], items[i] = items[i], items[j]
+			}
+		}
+	}
+	return items
+}

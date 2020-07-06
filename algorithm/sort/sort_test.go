@@ -30,3 +30,16 @@ func BenchmarkInsertionSort(b *testing.B) {
 		InsertionSort(a)
 	}
 }
+
+func TestBubbleSort(t *testing.T) {
+	a := []int{4, 8, 2, 5, 6, 7, 1, 0, 3, 9}
+	r := BubbleSort(a)
+	fmt.Println(r)
+}
+
+func BenchmarkBubbleSort(b *testing.B) {
+	a := []int{4, 8, 2, 5, 6, 7, 1, 0, 3, 9}
+	for i := 0; i < b.N; i++ {
+		BubbleSort(a)
+	}
+}
