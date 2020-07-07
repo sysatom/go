@@ -1,7 +1,7 @@
 package sort
 
 import (
-	"fmt"
+	"github.com/stretchr/testify/assert"
 	"sort"
 	"testing"
 )
@@ -9,7 +9,7 @@ import (
 func TestSelectionSort(t *testing.T) {
 	a := []int{4, 8, 2, 5, 6, 7, 1, 0, 3, 9}
 	r := SelectionSort(a)
-	fmt.Println(r)
+	assert.Equal(t, r, []int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9})
 }
 
 func BenchmarkSelectionSort(b *testing.B) {
@@ -22,7 +22,7 @@ func BenchmarkSelectionSort(b *testing.B) {
 func TestInsertionSort(t *testing.T) {
 	a := []int{4, 8, 2, 5, 6, 7, 1, 0, 3, 9}
 	r := InsertionSort(a)
-	fmt.Println(r)
+	assert.Equal(t, r, []int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9})
 }
 
 func BenchmarkInsertionSort(b *testing.B) {
@@ -35,7 +35,7 @@ func BenchmarkInsertionSort(b *testing.B) {
 func TestBubbleSort(t *testing.T) {
 	a := []int{4, 8, 2, 5, 6, 7, 1, 0, 3, 9}
 	r := BubbleSort(a)
-	fmt.Println(r)
+	assert.Equal(t, r, []int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9})
 }
 
 func BenchmarkBubbleSort(b *testing.B) {
@@ -48,7 +48,7 @@ func BenchmarkBubbleSort(b *testing.B) {
 func TestCocktailSort(t *testing.T) {
 	a := []int{4, 8, 2, 5, 6, 7, 1, 0, 3, 9}
 	r := CocktailSort(a)
-	fmt.Println(r)
+	assert.Equal(t, r, []int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9})
 }
 
 func BenchmarkCocktailSort(b *testing.B) {
@@ -61,7 +61,7 @@ func BenchmarkCocktailSort(b *testing.B) {
 func TestQuickSort(t *testing.T) {
 	a := []int{4, 8, 2, 5, 6, 7, 1, 0, 3, 9}
 	r := QuickSort(a)
-	fmt.Println(r)
+	assert.Equal(t, r, []int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9})
 }
 
 func BenchmarkQuickSort(b *testing.B) {
