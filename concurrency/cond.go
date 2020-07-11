@@ -1,11 +1,11 @@
-package thread
+package concurrency
 
 import (
 	"fmt"
 	"sync"
 )
 
-const MAX = 12
+const MAX = 10
 
 var buffer [MAX]int
 var fillPtr = 0
@@ -32,7 +32,7 @@ var mutex = sync.Mutex{}
 var emptyCond = sync.NewCond(&mutex)
 var fillCond = sync.NewCond(&mutex)
 
-func producer() {
+func condProducer() {
 	for i := 0; i < ProducerLoops; i++ {
 		mutex.Lock()
 		for count == MAX {
@@ -44,7 +44,7 @@ func producer() {
 	}
 }
 
-func consumer(n int) {
+func condConsumer(n int) {
 	for i := 0; i < ConsumerLoops; i++ {
 		mutex.Lock()
 		for count == 0 {
@@ -56,4 +56,3 @@ func consumer(n int) {
 		fmt.Println(n, tmp)
 	}
 }
-

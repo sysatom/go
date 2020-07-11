@@ -6,4 +6,5 @@ require (
 	github.com/go-redis/redis/v8 v8.0.0-beta.5 // indirect
 	github.com/spf13/viper v1.7.0 // indirect
 	github.com/stretchr/testify v1.4.0
+	golang.org/x/sync v0.0.0-20190423024810-112230192c58
 )
