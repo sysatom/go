@@ -17,3 +17,4 @@
 # Lib
 go.sum
 .idea
+database/migrate/config.yaml
